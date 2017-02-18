@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{79E55550-69F2-4AC8-91EB-CAF13D598B5E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>JpegRtspCamera</RootNamespace>
+    <ProjectName>JpegRtspCamera</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\live\BasicUsageEnvironment\include;..\..\..\live\groupSock\include;..\..\..\live\liveMedia\include;..\..\..\live\UsageEnvironment\include;D:\OpenCV2.4.13\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;opencv_core2413d.lib;opencv_highgui2413d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\OpenCV2.4.13\build\x86\vc12\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\live\BasicUsageEnvironment\include;..\..\..\live\groupSock\include;..\..\..\live\liveMedia\include;..\..\..\live\UsageEnvironment\include;D:\OpenCV2.4.13\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;opencv_core2413.lib;opencv_highgui2413.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\OpenCV2.4.13\build\x86\vc12\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\CameraJPEGDeviceSource.cpp" />
+    <ClCompile Include="..\..\..\src\CameraThread.cpp" />
+    <ClCompile Include="..\..\..\src\JpegFrameParser.cpp" />
+    <ClCompile Include="..\..\..\src\JPEGMediaSubsession.cpp" />
+    <ClCompile Include="..\..\..\live\BasicUsageEnvironment\BasicHashTable.cpp" />
+    <ClCompile Include="..\..\..\live\BasicUsageEnvironment\BasicTaskScheduler.cpp" />
+    <ClCompile Include="..\..\..\live\BasicUsageEnvironment\BasicTaskScheduler0.cpp" />
+    <ClCompile Include="..\..\..\live\BasicUsageEnvironment\BasicUsageEnvironment.cpp" />
+    <ClCompile Include="..\..\..\live\BasicUsageEnvironment\BasicUsageEnvironment0.cpp" />
+    <ClCompile Include="..\..\..\live\BasicUsageEnvironment\DelayQueue.cpp" />
+    <ClCompile Include="..\..\..\live\groupsock\GroupEId.cpp" />
+    <ClCompile Include="..\..\..\live\groupsock\Groupsock.cpp" />
+    <ClCompile Include="..\..\..\live\groupsock\GroupsockHelper.cpp" />
+    <ClCompile Include="..\..\..\live\groupsock\inet.c" />
+    <ClCompile Include="..\..\..\live\groupsock\NetAddress.cpp" />
+    <ClCompile Include="..\..\..\live\groupsock\NetInterface.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\AC3AudioRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\AC3AudioRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\AMRAudioRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\AMRAudioSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\AudioRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\Base64.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\BasicUDPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\BasicUDPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\BitVector.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\ByteStreamFileSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\DigestAuthentication.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\DVVideoRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\DVVideoRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\DVVideoStreamFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\FileServerMediaSubsession.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\FramedFileSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\FramedFilter.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\FramedSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\GSMAudioRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H261VideoRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H263plusVideoFileServerMediaSubsession.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H263plusVideoRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H263plusVideoRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H263plusVideoStreamFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H263plusVideoStreamParser.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H264or5VideoRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H264or5VideoStreamDiscreteFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H264or5VideoStreamFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H264VideoFileServerMediaSubsession.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H264VideoRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H264VideoRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H264VideoStreamDiscreteFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H264VideoStreamFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H265VideoRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H265VideoRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\H265VideoStreamDiscreteFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\InputFile.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\JPEGVideoRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\JPEGVideoRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\JPEGVideoSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\Locale.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\Media.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MediaSession.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MediaSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MediaSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MP3ADU.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MP3ADUdescriptor.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MP3ADUinterleaving.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MP3ADURTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MP3ADURTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MP3Internals.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MP3InternalsHuffman.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MP3InternalsHuffmanTable.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG1or2AudioRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG1or2AudioRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG1or2VideoRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG1or2VideoRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG1or2VideoStreamDiscreteFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG1or2VideoStreamFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG2TransportStreamFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG4ESVideoRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG4ESVideoRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG4GenericRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG4GenericRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG4LATMAudioRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG4LATMAudioRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG4VideoStreamDiscreteFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEG4VideoStreamFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEGVideoStreamFramer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MPEGVideoStreamParser.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MultiFramedRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\MultiFramedRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\OnDemandServerMediaSubsession.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\ourMD5.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\PassiveServerMediaSubsession.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\ProxyServerMediaSession.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\QCELPAudioRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\QuickTimeGenericRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\RTCP.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\rtcp_from_spec.c" />
+    <ClCompile Include="..\..\..\live\liveMedia\RTPInterface.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\RTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\RTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\RTSPClient.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\RTSPCommon.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\RTSPRegisterSender.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\RTSPServer.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\ServerMediaSession.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\SimpleRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\SimpleRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\StreamParser.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\T140TextRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\TextRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\TheoraVideoRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\TheoraVideoRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\VideoRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\VorbisAudioRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\VorbisAudioRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\VP8VideoRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\VP8VideoRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\VP9VideoRTPSink.cpp" />
+    <ClCompile Include="..\..\..\live\liveMedia\VP9VideoRTPSource.cpp" />
+    <ClCompile Include="..\..\..\live\UsageEnvironment\HashTable.cpp" />
+    <ClCompile Include="..\..\..\live\UsageEnvironment\strDup.cpp" />
+    <ClCompile Include="..\..\..\live\UsageEnvironment\UsageEnvironment.cpp" />
+    <ClCompile Include="..\..\..\src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\CameraThread.hh" />
+    <ClInclude Include="..\..\..\src\CameraJPEGDeviceSource.hh" />
+    <ClInclude Include="..\..\..\src\JpegFrameParser.hh" />
+    <ClInclude Include="..\..\..\src\JPEGMediaSubsession.hh" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
